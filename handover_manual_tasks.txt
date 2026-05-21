@@ -1,0 +1,400 @@
+================================================================
+HANDOVER DOCUMENT — Nigeria Neuroscience AI Study
+Article: "Application of Artificial Intelligence in Neuroscience
+          Research in Africa: Progress, Challenges and Opportunities"
+Author:  Suleiman Kwairanga (sk987@sussex.ac.uk)
+Dataset: nigeria_neuro_ai.csv (193 records)
+Date:    May 2026
+================================================================
+
+----------------------------------------------------------------
+SECTION 1: INCLUSION CRITERIA
+----------------------------------------------------------------
+A paper must meet ALL of the following to be included:
+
+IC1. Published in a peer-reviewed journal (no conference
+     abstracts, preprints, or grey literature)
+
+IC2. Study involves neuroscience OR a neurological condition
+     (brain, spinal cord, peripheral nervous system,
+     psychiatric conditions with neurological basis)
+
+IC3. Uses Artificial Intelligence, Machine Learning, Deep
+     Learning, or Neural Networks as a primary or major
+     component of the methodology
+
+IC4. Has a direct Nigeria connection — defined as AT LEAST
+     ONE of the following:
+       (a) Lead/first author is Nigeria-based (Nigerian
+           institution affiliation)
+       (b) Corresponding author is Nigeria-based
+       (c) Study data/patient population is from Nigeria
+
+IC5. Full abstract available in PubMed
+
+IC6. Written in English
+
+IC7. Published between 2000 and 2026 (to capture the AI era)
+
+
+----------------------------------------------------------------
+SECTION 2: EXCLUSION CRITERIA
+----------------------------------------------------------------
+A paper must be EXCLUDED if it meets ANY of the following:
+
+EC1. No Nigerian author affiliation AND no Nigerian data
+     (e.g. purely international study that merely mentions
+     Nigeria in passing)
+
+EC2. AI is mentioned only in the background/introduction
+     but NOT used in the study methodology
+
+EC3. Duplicate record (same study published twice —
+     keep the more complete version)
+
+EC4. Conference abstract only — no full peer-reviewed paper
+
+EC5. Preprint not yet peer-reviewed (e.g. bioRxiv, medRxiv)
+     unless subsequently published
+
+EC6. Animal studies only (no human participants or human
+     clinical data)
+
+EC7. No neurological relevance — purely cardiovascular,
+     oncology, or other non-neuro even if AI is used
+     EXCEPTION: keep if brain/CNS involvement is explicit
+     (e.g. brain tumour, neuro-oncology)
+
+EC8. Study is purely statistical/epidemiological with no
+     AI component (regression alone does not count as AI
+     unless framed as ML)
+
+EC9. Full text completely unavailable and abstract
+     insufficient to extract key data
+
+
+----------------------------------------------------------------
+SECTION 3: WHAT YOU MUST DO MANUALLY — COLUMN BY COLUMN
+----------------------------------------------------------------
+Open nigeria_neuro_ai.csv in Excel or Google Sheets.
+Work through each row reading the Title and Abstract.
+The following columns need manual completion:
+
+── PRIORITY 1: INCLUSION/EXCLUSION SCREENING ────────────────
+
+[ ] Include_YN
+    Decision: Y = include / N = exclude / U = uncertain
+    Apply IC1–IC7 and EC1–EC9 above to every row
+    THIS IS THE MOST IMPORTANT COLUMN — do this first
+    Flag: pay special attention to EC1 (non-Nigerian lead)
+          and EC2 (AI only mentioned, not used)
+
+[ ] Exclusion_Reason
+    If Include_YN = N, write the specific EC code + reason
+    Example: "EC1 — No Nigerian affiliation, data from Ghana"
+    Example: "EC2 — AI mentioned in intro only, study is RCT"
+    Example: "EC7 — Cardiovascular study, no neuro component"
+
+── PRIORITY 2: AFRICAN/NIGERIAN CONTEXT ─────────────────────
+
+[ ] African_Country
+    Check the Affiliations column for country names
+    Write the African country of the lead/first author
+    If multiple African countries, list all separated by ;
+    Example: "Nigeria" / "Nigeria; Ghana"
+    If unclear: check DOI link or PubMed record directly
+
+[ ] African_Region
+    Based on African_Country, assign:
+      West Africa   — Nigeria, Ghana, Senegal, Sierra Leone
+      East Africa   — Kenya, Ethiopia, Uganda, Tanzania
+      North Africa  — Egypt, Morocco, Tunisia, Algeria
+      Southern Africa — South Africa, Zambia, Zimbabwe
+      Central Africa — Cameroon, DRC, Congo
+
+[ ] Lead_Author_African_YN
+    Y = first author's affiliation is a Nigerian/African institution
+    N = first author is based outside Africa
+    Check the Affiliations column — first affiliation listed
+    is usually the first author's
+
+[ ] International_Collab
+    Solo_African    = all authors are Africa-based
+    Africa_Africa   = collaboration between African countries
+    Africa_Global   = African + non-African institutions
+    Global_Only     = no African author (flag for EC1 review)
+
+[ ] Study_Population_Location
+    Where was the patient/participant data collected?
+    Example: "Lagos, Nigeria" / "Multi-centre Nigeria"
+             "Not stated" / "International dataset"
+
+── PRIORITY 3: NEUROSCIENCE DOMAIN ──────────────────────────
+
+[ ] Neurological_Condition
+    AUTO-FILLED but please verify — scanner may have errors
+    Correct any misclassifications by reading the abstract
+    If multiple conditions, keep all separated by ;
+    Common errors to watch for:
+      - "MS" flagged as Multiple Sclerosis when it means
+        "mean score" or "manuscript"
+      - "depression" flagged psychiatric when it means
+        signal depression on EEG
+
+[ ] Neuro_Subdiscipline
+    Assign ONE primary subdiscipline:
+      Neuroimaging       — MRI, CT, PET studies
+      Neurophysiology    — EEG, EMG, nerve conduction
+      Neuropsychiatry    — depression, schizophrenia, anxiety
+      Neuro-oncology     — brain tumours
+      Neuroepidemiology  — population/burden studies
+      Neuro-genetics     — genomics of neurological disease
+      Neuropharmacology  — drug/treatment studies
+      Computational Neuro — purely modelling/simulation
+      Neurorehabilitation — recovery, stroke rehab
+      General Neuroscience — does not fit above
+
+[ ] Study_Setting
+    Clinical      = hospital/clinic patient data
+    Community     = population/community based
+    Laboratory    = lab/bench/animal (flag EC6 if animal only)
+    Computational = no real patient data, purely modelling
+    Mixed         = combination of above
+
+[ ] Data_Type_Used
+    AUTO-FILLED but verify — check abstract confirms the type
+    Correct if scanner missed or misclassified
+
+[ ] Sample_Size_N
+    Only 43/193 were auto-extracted — fill remaining 150
+    Look for: "n=", "N=", "X patients", "X participants"
+    If a review paper: write "Review — N/A"
+    If not stated anywhere in abstract: write "Not stated"
+
+── PRIORITY 4: AI/ML TECHNOLOGY ─────────────────────────────
+
+[ ] AI_Technique
+    AUTO-DETECTED but may be incomplete
+    Verify and add any missed techniques from abstract
+    Be specific: not just "deep learning" but "ResNet-50"
+                 not just "ML" but "Random Forest (500 trees)"
+
+[ ] AI_Category
+    AUTO-FILLED — verify against abstract
+    Options: Deep Learning / Classical Machine Learning /
+             NLP / Computer Vision / Ensemble Methods /
+             Federated Learning / Reinforcement Learning /
+             Statistical/Traditional AI
+
+[ ] AI_Task_Type
+    AUTO-FILLED — verify against abstract
+    Options: Diagnosis/Classification / Prediction/Prognosis /
+             Segmentation / Signal Processing /
+             Drug Discovery / Survival/Risk Analysis /
+             Review/Bibliometric / Regression/Estimation /
+             Image Generation/Synthesis
+
+[ ] Model_Performance_Metric
+    What accuracy measure did the authors report?
+    Examples: "AUC=0.94" / "Accuracy=87%" /
+              "Sensitivity=91%, Specificity=88%" /
+              "F1=0.82" / "Not reported"
+
+[ ] Open_Source_Code_YN
+    Y = authors shared code (GitHub link, Zenodo, etc.)
+    N = no code shared
+    NR = not reported/mentioned
+    Requires checking full text or supplementary materials
+
+[ ] Pretrained_Model_YN
+    Y = study used a pretrained model (e.g. ImageNet weights,
+        BioBERT, GPT, etc.)
+    N = model trained from scratch
+    NR = not reported
+
+── PRIORITY 5: AI MATURITY INDICATORS ───────────────────────
+
+[ ] AI_Maturity_Level_1to5
+    Score each paper on this scale:
+    1 = Basic ML (logistic regression, SVM, simple ANN)
+    2 = Intermediate ML (Random Forest, XGBoost, ensemble)
+    3 = Standard Deep Learning (CNN, LSTM, standard arch.)
+    4 = Advanced/SOTA (Transformer, BERT, attention, ViT)
+    5 = Novel architecture developed by Nigerian/African team
+
+[ ] Research_Stage
+    Exploratory        = first look, hypothesis generating
+    Proof_of_Concept   = small pilot, feasibility shown
+    Clinical_Validation = tested on real clinical population
+    Deployed           = AI system actually in clinical use
+    Review             = no original data
+
+[ ] External_Validation_YN
+    Y = model tested on a SEPARATE independent dataset
+    N = only internal validation (train/test split only)
+    NR = not reported
+
+[ ] Locally_Developed_AI_YN
+    Y = AI model built by Nigerian/African team from scratch
+    N = model imported/adapted from elsewhere
+    Partial = Nigerian team adapted an existing model
+
+[ ] Compute_Infrastructure
+    Where was the computation performed?
+    Local_HPC     = university/institution cluster
+    Cloud         = AWS, GCP, Azure explicitly mentioned
+    Google_Colab  = Colab mentioned
+    Personal_PC   = implied by small scale
+    Not_Stated    = no mention of compute
+
+[ ] Dataset_Origin
+    African_Only      = data entirely from Nigeria/Africa
+    Mixed             = African + international data combined
+    International_Only = no African data used
+    Not_Stated        = unclear from abstract
+
+── PRIORITY 6: FUNDING & ETHICS ─────────────────────────────
+
+[ ] African_Led_Funding_YN
+    Check the Funding column (auto-extracted)
+    Y = Nigerian/African body contributed funding
+        (e.g. TETFund, NRF South Africa, African Academy)
+    N = only international funders (NIH, Wellcome, EU)
+    NF = no funding stated
+
+[ ] Ethics_Approval_YN
+    Y = IRB/ethics committee approval explicitly mentioned
+    N = no mention of ethics approval
+    NA = not applicable (review paper, secondary data)
+
+[ ] Data_Privacy_Governance
+    How was data protection handled?
+    Anonymised       = authors state data was anonymised
+    Federated        = federated learning used
+    Consent_Described = informed consent described
+    Not_Mentioned    = no mention of privacy/data governance
+
+── PRIORITY 7: QUALITATIVE ASSESSMENT ───────────────────────
+
+[ ] Barriers_Reported
+    What limitations specific to African/Nigerian context
+    did the authors mention?
+    Examples: "Small sample size", "Limited compute",
+              "No local dataset", "Brain drain",
+              "Lack of annotated data", "Cost of MRI"
+
+[ ] Opportunities_Stated
+    What future directions or strengths did authors note?
+    Examples: "Mobile health potential", "Large disease burden",
+              "Growing tech ecosystem", "AI for low-resource settings"
+
+[ ] Clinical_Applicability
+    Your judgment of real-world Nigeria health system relevance:
+    High     = directly applicable to Nigerian clinical practice
+    Moderate = applicable with adaptation
+    Low      = theoretical/not yet applicable
+    NA       = review paper
+
+[ ] Reviewer_Notes
+    Free text — anything important not captured elsewhere
+    Examples: "Appears to be same dataset as PMID 12345678"
+              "No Nigerian author — recommend exclusion EC1"
+              "Impressive local dataset of 5000 Nigerian patients"
+              "AI used only peripherally — borderline EC2"
+
+
+----------------------------------------------------------------
+SECTION 4: RECOMMENDED WORKFLOW
+----------------------------------------------------------------
+
+PHASE 1 — SCREENING (do this first, ~2-3 hours)
+  Step 1: Sort CSV by Affiliations column
+  Step 2: Fill Lead_Author_African_YN for all 193 rows
+  Step 3: Fill Include_YN + Exclusion_Reason
+  Step 4: Filter to Include_YN = Y only before proceeding
+  Expected: ~100-140 papers will pass screening
+
+PHASE 2 — DATA EXTRACTION (main work, ~1-2 days)
+  Step 5: Fill African_Country, African_Region,
+          International_Collab, Study_Population_Location
+  Step 6: Verify auto-filled Neurological_Condition,
+          Data_Type_Used, AI_Category, AI_Task_Type
+  Step 7: Fill Sample_Size_N for remaining 150 rows
+  Step 8: Fill Model_Performance_Metric
+
+PHASE 3 — QUALITY/MATURITY SCORING (~half day)
+  Step 9: Score AI_Maturity_Level_1to5 for each paper
+  Step 10: Fill Research_Stage, External_Validation_YN,
+           Locally_Developed_AI_YN, Compute_Infrastructure,
+           Dataset_Origin
+
+PHASE 4 — FUNDING, ETHICS & QUALITATIVE (~half day)
+  Step 11: Verify Funding column, fill African_Led_Funding_YN
+  Step 12: Fill Ethics_Approval_YN, Data_Privacy_Governance
+  Step 13: Fill Barriers_Reported, Opportunities_Stated,
+           Clinical_Applicability, Reviewer_Notes
+
+PHASE 5 — SECOND REVIEWER CHECK
+  Have a second reviewer independently screen
+  at least 20% of papers (PRISMA recommendation)
+  Calculate inter-rater reliability (Cohen's Kappa)
+  Target Kappa > 0.8 for good agreement
+
+
+----------------------------------------------------------------
+SECTION 5: TOOLS TO HELP YOU
+----------------------------------------------------------------
+
+To open and sort the CSV:
+  Excel / Google Sheets — recommended
+  Use filters on Include_YN column to hide excluded papers
+
+To check affiliation of unclear papers:
+  https://pubmed.ncbi.nlm.nih.gov/[PMID]/
+
+To check if author is Nigeria-based:
+  Search author name on Google Scholar or ResearchGate
+
+To find full text for metrics/methods not in abstract:
+  Use DOI column to go directly to paper
+  University of Sussex library gives full access
+  Unpaywall browser extension for open access versions
+
+To track your progress:
+  Add a Progress% formula in Excel:
+  =COUNTIF(B2:B194,"Y")/193*100
+
+
+----------------------------------------------------------------
+SECTION 6: COLUMNS ALREADY AUTO-FILLED (verify only)
+----------------------------------------------------------------
+  PMID                      — complete
+  Title                     — complete
+  Abstract                  — complete
+  Year                      — complete
+  Journal                   — complete
+  Journal_Abbrev            — complete
+  Article_Type              — complete
+  Authors                   — complete
+  Affiliations              — complete (use for screening)
+  MeSH_Terms                — complete
+  Keywords                  — complete
+  DOI                       — complete
+  PMCID                     — complete
+  Funding                   — complete (verify)
+  Citation_Count            — complete
+  Citations_Per_Year        — complete
+  Relative_Citation_Ratio   — complete
+  Field_Citation_Rate       — complete
+  AI_Technique_AutoDetected — complete (verify)
+  Neurological_Condition    — auto-filled (verify)
+  Data_Type_Used            — auto-filled (verify)
+  Sample_Size_N             — partial (43/193 filled)
+  AI_Category               — auto-filled (verify)
+  AI_Task_Type              — auto-filled (verify)
+
+
+================================================================
+END OF HANDOVER DOCUMENT
+Generated: May 2026
+================================================================
